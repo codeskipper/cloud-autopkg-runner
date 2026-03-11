@@ -315,6 +315,13 @@ class Recipe:
         # Ensure preferences are written to a temporary file for AutoPkg to use
         prefs_file_path: Path = await self._autopkg_prefs.to_json_file(indent=2)
 
+        # dump prefs file for debugging
+        with open(prefs_file_path, 'r') as file:
+            file_content = file.read()
+        self._logger.debug(
+             f"Passing prefs as json file [{prefs_file_path}] content dump: {file_content}"
+        )
+      
         cmd: list[str] = [
             "/usr/local/bin/autopkg",
             "run",
