@@ -316,7 +316,7 @@ class Recipe:
         prefs_file_path: Path = await self._autopkg_prefs.to_json_file(indent=2)
 
 
-        if self._settings.verbosity_int(-1) > 2:
+        if self._settings.verbosity_int(-1) > 1:
             # dump prefs file for debugging
             with open(prefs_file_path, 'r') as file:
                 file_content = file.read()
