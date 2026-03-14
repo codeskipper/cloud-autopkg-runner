@@ -572,7 +572,7 @@ async def _async_main() -> None:
 
     autopkg_prefs = AutoPkgPrefs(settings.autopkg_pref_file)
     logger.debug(
-        f"Retrieved autopkg prefs plist file, contents: {autopkg_prefs}"
+        f"Retrieved autopkg prefs plist file from {settings.autopkg_pref_file}, contents: {autopkg_prefs}"
     )
 
     recipe_list = _generate_recipe_list(schema, args)
